@@ -1,0 +1,81 @@
+<head>
+<title>
+	
+</title>
+<style type="text/css">
+	
+#colorbox
+{
+width: 160px;
+height: 100px;
+background: grey;
+}
+#btn1 {
+	position: relative;
+	width: 80px;
+	height: 50px;
+	top: 25px;
+	left: 0px;
+}
+#h11 {
+text-align: center;
+	font-size: 44;
+color: red;
+}
+#text1 {
+
+	width:160px ;
+	height: 40px;
+}
+#text2 {
+
+	width:260px ;
+	height: 40px;
+}
+#link1
+{
+	font-size: 	44;
+
+}
+</style>
+ </head>
+ <body>
+ 	<script>
+ 		function 	colorbox() {
+ 			let element =  document.querySelector('#colorbox');
+ 			element.style.background = "red";
+ 		}
+
+
+
+ 		function colortext() {
+ 			
+ 			let text = document.getElementById("text1").value;
+ 			
+ 			let element = document.getElementById("h11");
+ 			element.style.color =text;
+ 			
+ 		} 
+ 		function changelink() {
+ 			let text = document.getElementById("text2").value;
+ 		
+ 			let elem =document.getElementById("link1");
+ 			elem.href= text;
+ 		}
+ 	</script>
+ 	<center>	<div id="colorbox"> <button id="btn1" onclick="colorbox()"> Красный </button> </div></center>
+ 	<br><br><br>
+ 	<h1 id="h11">Заголовок</h1>
+ 	<center><input type="text" id="text1" onkeydown="document.getElementById('text1').onkeypress = function($) {
+             if ($.keyCode === 13) {
+               colortext();
+             }
+           }" onchange="colortext()"></center>
+ 	<br><br><br>
+   <center>	<a href="http:/yandex.ru" id="link1" target="_blank">Ссылка</a></center>
+   <center><input type="text" id="text2" onkeydown="document.getElementById('text2').onkeypress = function($) {
+             if ($.keyCode === 13) {
+               changelink();
+             }
+           }" onchange="changelink()" ></center>
+ </body>
