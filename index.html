@@ -9,6 +9,7 @@
 width: 160px;
 height: 100px;
 background: grey;
+	text-align: center;
 }
 #btn1 {
 	position: relative;
@@ -23,6 +24,11 @@ text-align: center;
 color: red;
 }
 #text1 {
+
+	width:160px ;
+	height: 40px;
+}
+	#text0 {
 
 	width:160px ;
 	height: 40px;
@@ -42,8 +48,9 @@ color: red;
  <body>
  	<script>
  		function 	colorbox() {
+			let text = document.getElementById("text0").value;
  			let element =  document.querySelector('#colorbox');
- 			element.style.background = "red";
+ 			element.style.background = text;
  		}
 
 
@@ -63,7 +70,13 @@ color: red;
  			elem.href= text;
  		}
  	</script>
- 	<center>	<div id="colorbox"> <button id="btn1" onclick="colorbox()"> Красный </button> </div></center>
+ 	<center>	<div id="colorbox"> текст</div></center>
+	 <br><br>
+	 <center><input type="text" id="text0" onkeydown="document.getElementById('text0').onkeypress = function($) {
+             if ($.keyCode === 13) {
+               colorbox();
+             }
+           }" onchange="colortext()"></center>
  	<br><br><br>
  	<h1 id="h11">Заголовок</h1>
  	<center><input type="text" id="text1" onkeydown="document.getElementById('text1').onkeypress = function($) {
